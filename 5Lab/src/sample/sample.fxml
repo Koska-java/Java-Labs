@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.FunctionController">
+  <tabs>
+    <Tab text="Function">
+         <content>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #555555;">
+               <children>
+                  <Button fx:id="SetFunc" layoutX="190.0" layoutY="112.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="108.0" style="-fx-background-color: #B22222;" text="set function" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="Derivative" layoutX="190.0" layoutY="190.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="108.0" style="-fx-background-color: #B0C4DE;" text="derivative">
+                     <font>
+                        <Font name="Arial Narrow" size="15.0" />
+                     </font>
+                  </Button>
+                  <RadioButton fx:id="FirstFunc" layoutX="100.0" layoutY="39.0" mnemonicParsing="false" text="f = pow(exp(1),(-bt))sin(at+b)-sqrt(abs(bt+a))" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="Group1" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="SecondFunc" layoutX="100.0" layoutY="76.0" mnemonicParsing="false" text="f = bsin(apow(t,2)cos(2t))-1 " textFill="#fffefe" toggleGroup="$Group1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+                  <Label fx:id="Formula" layoutX="22.0" layoutY="142.0" prefHeight="28.0" prefWidth="470.0" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Bodoni MT" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="SetNumber" layoutX="26.0" layoutY="296.0" prefHeight="26.0" prefWidth="148.0" promptText="Number" />
+                  <TextField fx:id="Start" layoutX="308.0" layoutY="297.0" promptText="first" />
+                  <TextField fx:id="End" layoutX="308.0" layoutY="346.0" promptText="second" />
+                  <Button fx:id="Build" layoutX="336.0" layoutY="402.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="113.0" style="-fx-background-color: #FFFAFA;" text="build graph">
+                     <font>
+                        <Font name="Bell MT Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="Calculate" layoutX="56.0" layoutY="403.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="86.0" style="-fx-background-color: #2F4F4F;" text="calculate" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Narrow" size="15.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="Result" layoutX="26.0" layoutY="345.0" prefHeight="26.0" prefWidth="179.0" text="Result" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </content>
+    </Tab>
+    <Tab text="Graph">
+         <content>
+            <LineChart fx:id="chart">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
+         </content>
+    </Tab>
+  </tabs>
+</TabPane>
